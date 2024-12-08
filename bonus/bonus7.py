@@ -12,3 +12,7 @@ print(usernames)
 user_entries = ['10', '19.1', '20']
 user_entries = [float(user_entry) for user_entry in user_entries]
 print(user_entries)
+
+numbers = [10, 20, 30]
+numbers = [num * 2 for num in numbers]
+print(numbers)
