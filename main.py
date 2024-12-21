@@ -5,20 +5,29 @@ while True:
         case 'add':
             todo = input("Enter a todo") + "\n"
 
-            file = open('files/todos.txt', 'r')
-            todos = file.readlines()
-            file.close()
+            # file = open('files/todos.txt', 'r')
+            # todos = file.readlines()
+            # file.close()
+
+            with open('files/todos.txt', 'r') as file:
+                todos = file.readlines()
 
             todos.append(todo)
 
-            file = open('files/todos.txt', 'w')
-            file.writelines(todos)
-            file.close()
+            # file = open('files/todos.txt', 'w')
+            # file.writelines(todos)
+            # file.close()
+
+            with open('files/todos.txt','w') as  file:
+                file.writelines(todos)
         case 'show' :
 
-            file = open('files/todos.txt', 'r')
-            todos = file.readlines()
-            file.close()
+            # file = open('files/todos.txt', 'r')
+            # todos = file.readlines()
+            # file.close()
+
+            with open('files/todos.txt','r') as file:
+                todos = file.readlines()
 
             # new_todos = []
             # for item in todos:
