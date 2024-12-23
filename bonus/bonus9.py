@@ -6,4 +6,10 @@ if len(user_password) >= 8:
 else:
     result.append(False)
 
+digit = False
+for i in user_password:
+    if i.isdigit():
+        digit = True
+result.append(digit)
+
 print(result)
