@@ -1,40 +1,22 @@
 while True:
-    user_action = input("Type add,show,edit,complete or exit: ")
+    user_action = input("Type add, show, edit, complete or exit: ")
     user_action = user_action.strip()
 
-    if 'add' in user_action :
+    if 'add' in user_action:
         todo = user_action[4:]
-
-        # file = open('files/todos.txt', 'r')
-        # todos = file.readlines()
-        # file.close()
 
         with open('files/todos.txt', 'r') as file:
             todos = file.readlines()
 
         todos.append(todo)
 
-        # file = open('files/todos.txt', 'w')
-        # file.writelines(todos)
-        # file.close()
-
         with open('files/todos.txt','w') as  file:
             file.writelines(todos)
-    elif 'show' in user_action :
 
-        # file = open('files/todos.txt', 'r')
-        # todos = file.readlines()
-        # file.close()
+    elif 'show' in user_action :
 
         with open('files/todos.txt','r') as file:
             todos = file.readlines()
-
-        # new_todos = []
-        # for item in todos:
-        #     new_item = item.strip('\n')
-        #     new_todos.append(new_item)
-
-        # new_todos = [item.strip('\n') for item in todos]
 
         for index, item in enumerate(todos):
             item = item.strip('\n')
