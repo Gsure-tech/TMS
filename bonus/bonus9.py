@@ -21,3 +21,7 @@ for i in user_password:
 result.append(uppercase)
 
 print(result)
+if all(result):
+    print("Strong Password")
+else:
+    print("Weak Password")
