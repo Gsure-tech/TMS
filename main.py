@@ -2,7 +2,7 @@ while True:
     user_action = input("Type add, show, edit, complete or exit: ")
     user_action = user_action.strip()
 
-    if 'add' in user_action:
+    if user_action.startswith('add'):
         todo = user_action[4:]
 
         with open('files/todos.txt', 'r') as file:
@@ -13,7 +13,7 @@ while True:
         with open('files/todos.txt','w') as  file:
             file.writelines(todos)
 
-    elif 'show' in user_action :
+    elif user_action.startswith('show'):
 
         with open('files/todos.txt','r') as file:
             todos = file.readlines()
@@ -23,19 +23,24 @@ while True:
             row = f"{index + 1}-{item}"
             print(row)
     elif 'edit' in user_action:
-        number = int(user_action[5:])
-        number = number -1
+        try:
+            number = int(user_action[5:])
+            number = number -1
 
-        with open('files/todos.txt','r') as file:
-            todos = file.readlines()
+            with open('files/todos.txt','r') as file:
+                todos = file.readlines()
 
-        new_todo = input("Enter new todo")
-        todos[number] = new_todo + '\n'
+            new_todo = input("Enter new todo")
+            todos[number] = new_todo + '\n'
 
-        with open('files/todos.txt', 'w') as file:
-            file.writelines(todos)
+            with open('files/todos.txt', 'w') as file:
+                file.writelines(todos)
+        except ValueError:
+            print("Your command is not valid.")
+            user_action = input("Type add,show, edit, complete or exit: ")
+            user_action = user_action.strip()
 
-    elif 'complete' in user_action:
+    elif user_action.startswith('complete'):
         number = int(user_action[9:])
 
         with open('files/todos.txt', 'r') as file:
