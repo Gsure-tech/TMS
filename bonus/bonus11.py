@@ -1,7 +1,9 @@
 def get_average():
     with open("files/data.txt", "r") as file:
         data = file.readlines()
-    return data
+    values = data[1:]
+    values = [float(i) for i in values]
+    return values
 
 average = get_average()
 print(average)
