@@ -36,8 +36,8 @@ while True:
             new_todo = input("Enter new todo")
             todos[number] = new_todo + '\n'
 
-            with open('files/todos.txt', 'w') as file:
-                file.writelines(todos)
+            write_todos('files/todos.txt', todos)
+
         except ValueError:
             print("Your command is not valid.")
             continue
@@ -52,8 +52,7 @@ while True:
             todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
 
-            with open('files/todos.txt', 'w') as file:
-                file.writelines(todos)
+            write_todos('files/todos.txt',todos)
 
             message = f"Todo {todo_to_remove} was removed from the list."
             print(message)
