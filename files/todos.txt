@@ -1,2 +1,2 @@
 Make soup
-Make pizza
+Clean the code
