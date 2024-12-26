@@ -3,6 +3,10 @@ def get_todos(filepath):
         todos_local = file_local.readlines()
     return todos_local
 
+def write_todos(filepath, todos_arg):
+    with open(filepath, 'w') as file:
+        file.writelines(todos_arg)
+
 while True:
     user_action = input("Type add, show, edit, complete or exit: ")
     user_action = user_action.strip()
@@ -12,8 +16,7 @@ while True:
         todos = get_todos("files/todos.txt")
         todos.append(todo + '\n')
 
-        with open('files/todos.txt','w') as  file:
-            file.writelines(todos)
+        write_todos('files/todos.txt',todos)
 
     elif user_action.startswith('show'):
 
