@@ -10,3 +10,9 @@ def write_todos(todos_arg, filepath="files/todos.txt" ):
     """" Write a to-do items list to a text file. """
     with open(filepath, 'w') as file:
         file.writelines(todos_arg)
+
+
+
+if __name__ == "__main__":
+    print("Hello from functions")
+    print(get_todos())
