@@ -1,8 +1,7 @@
-a = [{"question_text": "What are dolphins?",
-  "alternatives":["Amphibians", "Fish","Mammals","Birds"],
-  "correct_answer":3},
- {"question_text": "What occupies most of the Earth's surface?",
-  "alternatives":["Land", "Water"],
-  "correct_answer":2}]
+import  json
 
-print(a)
+with open("questions.json", "r") as file:
+    content = file.read()
+
+
+print(content)
