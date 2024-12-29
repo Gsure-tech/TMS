@@ -17,11 +17,16 @@ for question in data:
     user_choice = int(input("Enter your answer: "))
     question["user_choice"] = user_choice
 
-    if question["correct_answer"] == question["user_choice"]:
-        score = score + 1
 
 for index, question in enumerate(data):
-    message = (f"{index+1} - Your answer: {question['user_choice']},"
+    if question["correct_answer"] == question["user_choice"]:
+        score = score + 1
+        result = "Correct Answer"
+    else:
+        result = "Wrong Answer"
+
+
+    message = (f"{index+1} {result} - Your answer: {question['user_choice']},"
                f"Correct answer: {question['correct_answer']}")
     print(message)
 
