@@ -1,5 +1,10 @@
 import functions
-import FreeSimpleGUI
+import FreeSimpleGUI as sg
 
-window = FreeSimpleGUI.Window('My To-Do App', layout="")
+
+label = sg.Text("Type in a to-do")
+input_box = sg.InputText(tooltip="Enter todo")
+
+window = sg.Window('My To-Do App', layout=[""])
 window.read()
+window.close()
