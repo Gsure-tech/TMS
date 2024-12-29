@@ -21,3 +21,4 @@ for question in data:
         score = score + 1
 
 print(data)
+print(score, "/", len(data))
