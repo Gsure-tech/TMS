@@ -1,5 +1,7 @@
 import  json
 
+from main import message
+
 with open("questions.json", "r") as file:
     content = file.read()
 
@@ -19,6 +21,11 @@ for question in data:
 
     if question["correct_answer"] == question["user_choice"]:
         score = score + 1
+
+for question in data:
+    message = (f"Your answer: {question['user_choice']},"
+               f"Correct answer: {question['correct_answer']}")
+    print(message)
 
 print(data)
 print(score, "/", len(data))
