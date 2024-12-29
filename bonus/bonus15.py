@@ -13,3 +13,4 @@ for question in data:
     print(question["question_text"])
     for index, alternative in enumerate(question["alternatives"]):
         print(index + 1, "-", alternative)
+    user_choice = input("Enter your answer: ")
