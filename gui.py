@@ -11,7 +11,8 @@ window = sg.Window('My To-Do App',
                    font=('Helvetica',20))
 
 
-event = window.read()
+event, values = window.read()
 print(event)
+print(values)
 
 window.close()
