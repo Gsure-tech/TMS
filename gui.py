@@ -21,5 +21,7 @@ while True:
             new_todo = values['todo'] + "\n"
             todos.append(new_todo)
             functions.write_todos(todos)
+        case sg.WINDOW_CLOSED():
+            window.close()
 
 window.close()
