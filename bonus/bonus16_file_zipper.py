@@ -21,6 +21,7 @@ while True:
 
     filepaths = values["files"].split(";")
     folder = values["folder"]
+    make_archive(filepaths, folder)
 
 window.read()
 window.close()
