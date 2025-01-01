@@ -1,9 +1,9 @@
 import FreeSimpleGUI as sg
-
+from zip_creator import make_achive
 
 label_source = sg.Text("Select files to compress:")
 input_box1 = sg.InputText()
-choose_button1 = sg.FileBrowse("Choose", key="files")
+choose_button1 = sg.FilesBrowse("Choose", key="files")
 
 label_destination = sg.Text("Select destination folder:")
 input_box2 = sg.InputText()
@@ -21,7 +21,7 @@ while True:
 
     filepaths = values["files"].split(";")
     folder = values["folder"]
-    make_archive(filepaths, folder)
+    make_achive(filepaths, folder)
 
 window.read()
 window.close()
