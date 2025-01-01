@@ -10,10 +10,11 @@ input_box2 = sg.InputText()
 choose_button2 = sg.FolderBrowse("Choose", key="folder")
 
 compress_button = sg.Button("Compress")
+output_label = sg.Text(key="output", text_color="green")
 
 window = sg.Window('File Zipper', layout=[[label_source, input_box1, choose_button1],
                                           [label_destination, input_box2, choose_button2],
-                                          [compress_button]])
+                                          [compress_button, output_label]])
 
 while True:
     event, values = window.read()
@@ -22,6 +23,7 @@ while True:
     filepaths = values["files"].split(";")
     folder = values["folder"]
     make_achive(filepaths, folder)
+    window["output"].update(value="Compression completed!")
 
 window.read()
 window.close()
