@@ -16,6 +16,7 @@ window = sg.Window('File Zipper', layout=[[label_source, input_box1, choose_butt
                                           [label_destination, input_box2, choose_button2],
                                           [compress_button, output_label]])
 
+
 while True:
     event, values = window.read()
     print(event, values)
