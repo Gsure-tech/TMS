@@ -1,7 +1,7 @@
 import zipfile
 
-def extract_archive(archive_path, dest_dir):
-    with zipfile.ZipFile(archive_path, 'r') as archive:
+def extract_archive(archivepath, dest_dir):
+    with zipfile.ZipFile(archivepath, 'r') as archive:
         archive.extractall(dest_dir)
 
 
