@@ -1,5 +1,4 @@
 Make soup
 Clean the code
 Add curry
-Make Pizza
 Improve the app
