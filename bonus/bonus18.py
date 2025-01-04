@@ -1,5 +1,5 @@
 import FreeSimpleGUI as sg
-
+from zip_extractor import extract_archive
 
 sg.theme("Black")
 label1= sg.Text("Select archive")
@@ -19,14 +19,17 @@ window = sg.Window('Archive Extractor',
                            [extract_button, output_label]])
 
 
-# while True:
-#     event, values = window.read()
-#     print(event, values)
-#
-#     filepaths = values["files"].split(";")
-#     folder = values["folder"]
-#     make_achive(filepaths, folder)
-#     window["output"].update(value="Compression completed!")
+while True:
+    event, values = window.read()
+    print(event, values)
+    archivepath = values["archive"]
+    dest_dir = values["folder"]
+    extract_archive(archivepath, dest_dir)
 
-window.read()
+
+    # filepaths = values["files"].split(";")
+    # folder = values["folder"]
+    # make_achive(filepaths, folder)
+    # window["output"].update(value="Compression completed!")
+
 window.close()
