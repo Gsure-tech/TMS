@@ -18,6 +18,11 @@ window = sg.Window("Converter", layout=[[label_feet,input_box_feet],
 
 while True:
     event, values = window.read()
+    match event:
+        case "Exit":
+            break
+        case sg.WIN_CLOSED:
+            break
     feet = float(values["feet"])
     inches = float(values["inches"])
 
