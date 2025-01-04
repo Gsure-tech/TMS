@@ -4,7 +4,7 @@ from zip_extractor import extract_archive
 sg.theme("Black")
 label1= sg.Text("Select archive")
 input1 = sg.InputText()
-choose_button1 = sg.FileBrowse("Choose", key="files")
+choose_button1 = sg.FileBrowse("Choose", key="archive")
 
 label2 = sg.Text("Select dest dir:")
 input2 = sg.InputText()
@@ -26,10 +26,5 @@ while True:
     dest_dir = values["folder"]
     extract_archive(archivepath, dest_dir)
 
-
-    # filepaths = values["files"].split(";")
-    # folder = values["folder"]
-    # make_achive(filepaths, folder)
-    # window["output"].update(value="Compression completed!")
-
+    window["output"].update(value="Extraction completed!")
 window.close()
