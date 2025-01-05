@@ -1,5 +1,2 @@
-Make soup
-Clean the code
-But grocery
-Fix the floor
-Print the pictures
+Add the soup
+Help the neigbours
