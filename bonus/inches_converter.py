@@ -28,5 +28,4 @@ while True:
 
     result = convert(feet, inches)
     window["output"].update(value=f"{result} m", text_color="white")
-
 window.close()
