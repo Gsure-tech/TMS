@@ -32,6 +32,6 @@ The program should print out the text “List without duplicates:” followed by
 
 numbers = [3, 1, 2, 3, 4, 1, 5, 2]
 
-cleaned_list = set(numbers)
+removed_duplicate = set(numbers)
 
-print(cleaned_list)
+print(removed_duplicate)
