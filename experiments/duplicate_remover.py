@@ -34,4 +34,4 @@ numbers = [3, 1, 2, 3, 4, 1, 5, 2]
 
 removed_duplicate = set(numbers)
 
-print(cleaned_list)
+print(removed_duplicate)
